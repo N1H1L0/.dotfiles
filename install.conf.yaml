@@ -1,0 +1,41 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+
+- clean: ['~', '~/.config']
+
+- link:
+    #~/.dotfiles: ''
+
+    ~/.vimrc: 
+      path: vim/vimrc
+      force: true 
+
+    ~/.zshrc:
+      path: zsh/zshrc
+      force: true
+
+    ~/.zprofile:
+      path: zsh/zprofile
+      force: true
+
+    ~/.bashrc:
+      path: bash/bashrc
+      force: true
+
+    ~/.bash_profile:
+      path: bash/bash_profile
+      force: true 
+
+    ~/.tmux.conf:
+      path: tmux/tmux.conf
+      force: true
+
+    ~/.gitconfig:
+      path: git/gitconfig
+      force: true
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  - [git submodule update --init --remote, Updating submodules]

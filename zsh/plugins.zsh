@@ -1,0 +1,10 @@
+# Oh My Zsh settings
+
+export ZSH="$HOME/.dotfiles/zsh/plugins/ohmyzsh"
+
+ZSH_THEME="cypher"
+
+# If plugins are taking to long to load you could switch to using Zgen load some on startup and then load the rest with a function if you don't need every plugin at startup
+plugins=(git colorize vi-mode pip brew osx)
+
+source $ZSH/oh-my-zsh.sh

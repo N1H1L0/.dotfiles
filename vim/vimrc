@@ -1,0 +1,239 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible "VI compatible mode is disabled so that VIm things work
+
+" =============================================================================
+"   PLUGINS
+" =============================================================================
+
+" Install vim-plug if not found
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
+
+" Install plugins if not found
+autocmd VimEnter *
+  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall --sync | q
+  \| endif
+
+call plug#begin()
+
+" Use 'PlugInstall' to install plugins manually
+
+" File system explorer
+Plug 'preservim/nerdtree'             
+
+" Show git status of files in NerdTree
+Plug 'xuyuanp/nerdtree-git-plugin'   
+
+" Better spell check
+Plug 'kamykn/spelunker.vim'           
+
+" Show Preview for markdown files
+Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
+
+call plug#end()
+
+" =============================================================================
+"  EDITOR SETTINGS
+" =============================================================================
+
+" Colorscheme
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+syntax on                       "enable syntax processing 
+colorscheme peachpuff           "set colorscheme
+highlight Comment ctermfg=green "Highlight comment green
+
+" Spaces & Tabs
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set tabstop=2       "number of visual paces per TAB
+set shiftwidth=2    "number of spaces in tab editing
+set expandtab       "tabs are spaces, because python
+set autoindent      "makes new line previous line's indentation
+set smartindent
+set cindent
+
+" UI Config
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set number                          "show line numbers
+"set relativenumber                  "show relative numbers 
+set ruler                           "always show cursor position
+set noerrorbells visualbell t_vb=   "disable annoying error noises
+set clipboard=unnamed               "synchronizes the system clipboard with the unnamed register
+set nospell                         "prevent double highlighting of misspelled word when using Spelunker
+set shortmess+=I                    "disable the default startup message
+set linebreak                       "have lines wrap instead of continue off-screen
+set showmatch                       "highlight matching [{()}]
+set showcmd                         "show command in bottom bar
+set updatetime=100                  "some plugins require fast updatetime
+"set splitbelow                      "open split pane to bottom
+"set splitright                      "open split pane to right
+
+" Buffers
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set hidden              "allows having hidden buffers (not displayed in any window)
+
+" Sensible stuff
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set backspace=indent,eol,start     "make backspace work properly
+"set mouse+=a                       "enable mouse support :(
+nmap Q <Nop>                       "'Q' in normal mode enters Ex mode. You almost never want this.
+set autoread                       "autoreload the file in Vim if it has been changed outside of Vim
+
+"Searching
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set incsearch   "search as characters are entered
+set hlsearch    "highlight search matches
+set ignorecase  "ignore caps in searches by default
+set smartcase   "but make it caps sensitive if an uppercase is entered
+
+" Undo
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Check for and create undo directories 
+if !isdirectory($HOME."/.vim")
+    call mkdir($HOME."/.vim", "", 0770)
+endif
+if !isdirectory($HOME."/.vim/undo-dir")
+    call mkdir($HOME."/.vim/undo-dir", "", 0700)
+endif
+
+" Don't forget to set crontab so undo file delete after 90 days https://vi.stackexchange.com/questions/6/how-can-i-use-the-undofile
+
+set undodir=~/.vim/undo-dir   "make undo file directory
+set undofile                  "maintain undo history between sessions
+
+" =============================================================================
+"   PLUGIN CONFIG
+" =============================================================================
+
+" Combat bad configs made by vim-plug
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+au Filetype python setlocal ts=2 sts=0 sw=2 "make indenting in python work like vimrc settings
+au Filetype yaml   setlocal ts=2 sts=0 sw=2 "make indenting in yaml work like vimrc settings
+filetype indent off                         "explicitly turn filetype indent off since vim-plug auto turns it on
+
+" Spelunker
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:spelunker_target_min_char_len = 2        "check for spelling of words longer than 2 characters 
+let g:spelunker_max_hi_words_each_buf = 1000   "max amount of highlighted words in buffer
+let g:spelunker_check_type = 2                 "spellcheck words when open and save (1) check words in buffer (2)
+set spelllang=en
+set spellfile=$HOME/.dotfiles/vim/spellfile/en.utf-8.add
+
+" Minor Configs
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" * NERDTree
+" Close vim if only window left is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" * vim-instant-markdown
+" Set interactive bash as the default vim shell
+set shell=bash\ -i
+
+" =============================================================================
+"   CUSTOM SHORTCUTS  (LEADER, FN, &c)
+" =============================================================================
+
+" Leader
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Leader
+let mapleader=" "       "leader is space
+
+" <Space>  --  <leader><leader> toggles between buffers
+nnoremap <Leader><Leader> <c-^>
+
+" - |     --  Split with leader
+nnoremap <Leader>- :sp<CR>
+nnoremap <Leader>\| :vsp<CR>
+
+" w wq q   --  Quick Save
+nmap <Leader>w :w<CR>
+nmap <Leader>q :q<CR>
+nmap <Leader>wq :wq<CR>
+nmap <Leader>Q :q!<CR>
+
+" y d p P   --  Quick copy paste into system clipboard
+nmap <Leader>y "+y
+nmap <Leader>d "+d
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
+" Movement
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Move vertically by visual line
+nnoremap j gj
+nnoremap k gk
+
+" (Shift)Tab (de)indents code
+vnoremap <Tab> >
+vnoremap <S-Tab> <
+
+" Easier split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Jump to start and end of line using the home row keys
+map H ^
+map L $
+
+" Lose Bad Habits
+" http://vimcasts.org/blog/2013/02/habit-breaking-habit-making/
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Remove newbie crutches in Command Mode
+" cnoremap <Down> <Nop>
+" cnoremap <Left> <Nop>
+" cnoremap <Right> <Nop>
+" cnoremap <Up> <Nop>
+
+" Remove newbie crutches in Insert Mode
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+inoremap <Up> <Nop>
+
+" Remove newbie crutches in Normal Mode
+nnoremap <Down> <Nop>
+nnoremap <Left> <Nop>
+nnoremap <Right> <Nop>
+nnoremap <Up> <Nop>
+
+" Remove newbie crutches in Visual Mode
+vnoremap <Down> <Nop>
+vnoremap <Left> <Nop>
+vnoremap <Right> <Nop>
+vnoremap <Up> <Nop>
+
+" Enable hard home so hjkl are disabled
+" autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+
+" =============================================================================
+"   AUTOCOMMANDS
+" =============================================================================
+
+" Jump to last edit position on opening file
+if has("autocmd")
+  " https://stackoverflow.com/questions/31449496/vim-ignore-specifc-file-in-autocommand
+  au BufReadPost * if expand('%:p') !~# '\m/\.git/' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+" =============================================================================
+"   LOCAL CUSTOMIZATIONS
+" =============================================================================
+
+" Local customizations in vimrc_local
+let $LOCALFILE=expand("~/.dot_local/vimrc_local")
+if filereadable($LOCALFILE)
+  source $LOCALFILE
+endif

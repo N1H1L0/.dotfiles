@@ -1,0 +1,29 @@
+# The most necessary stuff
+brew "vim"
+brew "zsh"
+brew "git"
+brew "bash"
+brew "grep" 
+brew "asdf"
+
+# The rest of the stuff
+brew "pyenv"
+brew "rbenv"
+brew "node"
+
+# Dev cask installed stuff 
+cask "rectangle"
+cask "virtualbox"
+cask "wireshark"
+cask "scansion"
+cask "chromium"
+cask "visual-studio-code"
+
+# Non dev stuff 
+cask "anki"
+cask "inkscape"
+cask "malwarebytes"
+cask "notion"
+cask "zoom"
+cask "spotify"
+
