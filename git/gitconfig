@@ -2,9 +2,6 @@
 [color]
   ui = auto
 
-[submodule]
-	recurse = true
-
 # Allow local customizations in the .gitconfig_local file
 [include]
   path = ~/.dot_local/gitconfig_local
