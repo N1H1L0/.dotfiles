@@ -2,6 +2,10 @@
 install:
 	./install
 
+# Set macos settings
+set-mac:
+	./macos/set-mac.sh
+
 # Save snapshot of all Homebrew packages to brew/Brewfile
 brew-snap:
 	brew bundle dump -f --file=brew/Brewfile
@@ -9,9 +13,9 @@ brew-snap:
 
 # Install the only the most necessary stuff with brew
 brew-basic:
-	./brew-basic
+	./brew/brew-basic.sh
 
-# Install a more compriensive set of tools with brew 
+# Install a more comprehensive set of tools with brew 
 brew-all:
 	brew update
 	brew upgrade 
@@ -21,7 +25,7 @@ brew-all:
 # Restore Homebrew packages from brew-basic
 brew-restore-basic:
 	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install | ruby
-	./brew-basic
+	./brew/brew-basic
 
 # Restore Homebrew packages from brewfile 
 brew-restore-all:
@@ -47,4 +51,4 @@ brew-bash:
 brew-zsh:
 	chsh -s /usr/local/bin/zsh 
 
-.PHONY: install brew-snap brew-basic brew-all brew-restore-basic bash zsh brew-bash brew-zsh
+.PHONY: install brew-snap brew-basic brew-all brew-restore-basic bash zsh brew-bash brew-zsh set-mac
