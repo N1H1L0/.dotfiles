@@ -11,10 +11,19 @@
 **Warning:** If you want to give these dotfiles a try, you should first fork this repository, review the code, and remove things you don’t want or need. Don’t blindly use my settings unless you know what that entails. Use at your own risk!
 
 ### Installation
-
+###### With https
 ```sh
-git clone git@github.com:N1H1L0/.dotfiles.git .dotfiles --recursive; cd .dotfiles; make install
+git clone https://github.com/N1H1L0/.dotfiles.git .dotfiles --recursive; cd .dotfiles; make install; cd -
 ```
+###### With ssh
+```sh
+git clone git@github.com:N1H1L0/.dotfiles.git .dotfiles --recursive; cd .dotfiles; make install; cd -
+```
+###### With GitHub CLI 
+```sh
+gh repo clone N1H1L0/.dotfiles .dotfiles --recursive; cd .dotfiles; make install; cd -
+```
+
 .dotfiles uses [Dotbot][dotbot] for installation.
 
 ### Updating once installed

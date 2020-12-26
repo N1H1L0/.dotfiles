@@ -15,7 +15,7 @@ fi
 # DotFiles Update
 dfu() {
     (
-        cd ~/.dotfiles && git pull --ff-only && make install && cd
+        cd ~/.dotfiles; git pull --ff-only; make install; cd -
     )
 }
 
