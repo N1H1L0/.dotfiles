@@ -9,7 +9,6 @@ export HISTCONTROL=ignoreboth
 export HISTSIZE=5000
 export HISTIGNORE="clear:bg:fg:cd:cd -:cd ..:exit:date:w:* --help:ls:l:ll:lll"
 
-
 # Detect the platform (similar to $OSTYPE)
 OS="`uname`"
 case $OS in

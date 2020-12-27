@@ -1,3 +1,13 @@
+: <<'END'
+# Add brew completions in zsh
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+END
+
 # Oh My Zsh settings
 
 export ZSH="$HOME/.dotfiles/zsh/plugins/ohmyzsh"
