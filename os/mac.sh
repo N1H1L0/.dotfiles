@@ -150,3 +150,10 @@ for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   killall "$app" > /dev/null 2>&1
 done
 
+echo ""
+cecho "  ____   ___  _   _ _____  " $cyan
+cecho " |  _ \ / _ \| \ | | ____| " $cyan
+cecho " | | | | | | |  \| |  _|   " $cyan
+cecho " | |_| | |_| | |\  | |___  " $cyan
+cecho " |____/ \___/|_| \_|_____| " $cyan
+

@@ -3,8 +3,8 @@ install:
 	./install
 
 # Set macos settings
-set-mac:
-	./macos/set-mac.sh
+mac:
+	./os/mac.sh
 
 # Save snapshot of all Homebrew packages to brew/Brewfile
 brew-snap:
@@ -51,4 +51,4 @@ brew-bash:
 brew-zsh:
 	chsh -s /usr/local/bin/zsh 
 
-.PHONY: install brew-snap brew-basic brew-all brew-restore-basic bash zsh brew-bash brew-zsh set-mac
+.PHONY: install mac brew-snap brew-basic brew-all brew-restore-basic bash zsh brew-bash brew-zsh 
