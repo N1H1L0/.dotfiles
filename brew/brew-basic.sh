@@ -18,6 +18,8 @@ brew install git
 brew install bash
 brew install grep 
 brew install asdf
+brew install coreutils 
+brew install curl 
 brew install wget 
 
 # Remove outdated versions from the cellar.
