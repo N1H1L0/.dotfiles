@@ -7,7 +7,7 @@ if [ -f ~/.dot_local/shell_local_before ]; then
 fi
 
 # Allow local customizations in the bashrc_local_before file
-if [ f  ~/.dot_local/bashrc_local_before ]; then
+if [ -f  ~/.dot_local/bashrc_local_before ]; then
     source ~/.dot_local/bashrc_local_before
 fi
 

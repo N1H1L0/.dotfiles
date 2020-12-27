@@ -1,15 +1,13 @@
-# The most necessary stuff
+# The most necessary stuff 
 brew "vim"
 brew "zsh"
 brew "git"
 brew "bash"
 brew "grep" 
 brew "asdf"
+brew "wget" 
 
 # The rest of the stuff
-brew "pyenv"
-brew "rbenv"
-brew "node"
 
 # Dev cask installed stuff 
 cask "rectangle"
