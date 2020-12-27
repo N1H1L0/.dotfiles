@@ -3,7 +3,7 @@ OS="`uname`"
 case $OS in
   'Linux')
     # echo 'Linux'
-		alias ls='ls --color=auto -p'
+		alias ls='ls --color=auto'
     ;;
   'Darwin')
     # echo 'macOS'
