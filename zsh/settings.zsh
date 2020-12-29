@@ -6,7 +6,8 @@ if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 fi
 
-# Don't need anything for asdf as zsh plugin does everything for you
+# Set fpath so asdf completions work properly
+fpath=($HOME/.asdf/completions $fpath)
 
 # Detect the platform (similar to $OSTYPE)
 OS="`uname`"
