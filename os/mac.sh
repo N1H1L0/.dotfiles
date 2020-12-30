@@ -88,6 +88,13 @@ defaults write com.apple.menuextra.battery ShowPercent -bool true
 cecho "  > Check for software updates daily, not just once per week" $yellow
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
+cecho "  > Disabel double-space period" $yellow
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -int 0
+
+cecho "  > Set up trackpad & mouse speed to what I like" $yellow
+defaults write -g com.apple.trackpad.scaling 4
+defaults write -g com.apple.mouse.scaling 4
+
 echo ""
 cecho "###############################################################################" $green
 cecho "# Finder                                                                      #" $green
@@ -96,12 +103,30 @@ cecho "#########################################################################
 cecho "  > Always open everything in Finder's list view" $yellow
 defaults write com.apple.Finder FXPreferredViewStyle Nlsv
 
+cecho "  > Expand save panel by default" $yellow
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+
+cecho "  > Set sidebar icon size to small" $yellow
+defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 1
+
+cecho "  > Show status bar" $yellow
+defaults write com.apple.finder ShowStatusBar -bool true
+
+cecho "  > Show path bar" $yellow 
+defaults write com.apple.finder ShowPathbar -bool true
+
+cecho "  > Display full POSIX path as Finder window title" $yellow
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+cecho "  > Disable the warning when changing a file extension" $yellow
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
 echo ""
 cecho "###############################################################################" $green
 cecho "# Photos                                                                      #" $green
 cecho "###############################################################################" $green
 
-cecho "  > Disable it from starting everytime a device is plugged in" $yellow
+cecho "  > Disable it from starting every time a device is plugged in" $yellow
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 echo ""
@@ -118,6 +143,7 @@ defaults write com.apple.dock "expose-group-by-app" -bool true
 
 cecho "  > Remove the auto-hiding Dock delay" $yellow
 defaults write com.apple.dock autohide-delay -float 0
+
 cecho "  > Remove the animation when hiding/showing the Dock" $yellow
 defaults write com.apple.dock autohide-time-modifier -float 0
 
@@ -135,7 +161,7 @@ cecho "#########################################################################
 cecho "# Chrome, Safari, & WebKit                                                    #" $green
 cecho "###############################################################################" $green
 
-cecho "  > Privacy: Don't send search queries to Apple" $yello
+cecho "  > Privacy: Don't send search queries to Apple" $yellow
 defaults write com.apple.Safari UniversalSearchEnabled -bool false
 defaults write com.apple.Safari SuppressSearchSuggestions -bool true
 
