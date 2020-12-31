@@ -41,3 +41,4 @@ fi
 if [ -f ~/.dot_local/bashrc_local_after ]; then
     source ~/.dot_local/bashrc_local_after
 fi
+
