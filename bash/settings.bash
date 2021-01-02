@@ -2,11 +2,13 @@
 [[ $- != *i* ]] && return
 
 # Specify default editor.
-export EDITOR='vim'
+export VISUAL=vim
+export EDITOR="$VISUAL"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export VISUAL=vim
+  export EDITOR="$VISUAL"
 fi
 
 # History management
