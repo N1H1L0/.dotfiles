@@ -31,7 +31,7 @@ Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'kamykn/spelunker.vim'           
 
 " Show Preview for markdown files
-Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
+"Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 
 call plug#end()
 

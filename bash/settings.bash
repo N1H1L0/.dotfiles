@@ -18,7 +18,7 @@ if [ -d "$HOME/.asdf" ]; then
   # asdf installed with git 
   . $HOME/.asdf/asdf.sh
   . $HOME/.asdf/completions/asdf.bash
-elif [ "brew ls --versions asdf >/dev/null" ]; then 
+elif [ -d "$HOME/usr/local/Homebrew" -a "brew ls --versions asdf >/dev/null" ]; then 
   # asdf installed with brew
   . /usr/local/opt/asdf/asdf.sh
   . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
