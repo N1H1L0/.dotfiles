@@ -20,10 +20,10 @@ if [ -f "$HOME/.asdf/asdf.sh" ]; then
   # asdf installed with git 
   . $HOME/.asdf/asdf.sh
   . $HOME/.asdf/completions/asdf.bash
-elif [ -d "$HOME/usr/local/Homebrew" -a "brew ls --versions asdf >/dev/null" ]; then 
+elif [ -d "/usr/local/Homebrew" -a "brew ls --versions asdf >/dev/null" ]; then 
   # asdf installed with brew
-  $(brew --prefix asdf)/asdf.sh
-  $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
+  . /usr/local/opt/asdf/asdf.sh 
+  . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
 else 
   # do nothing so bash doesn't give errors with asdf isn't installed
   :
