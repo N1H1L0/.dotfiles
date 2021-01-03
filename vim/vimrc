@@ -67,6 +67,7 @@ set linebreak                       "have lines wrap instead of continue off-scr
 set showmatch                       "highlight matching [{()}]
 set showcmd                         "show command in bottom bar
 set updatetime=100                  "some plugins require fast updatetime
+filetype plugin on                  "turn filetype plugin on 
 "set splitbelow                      "open split pane to bottom
 "set splitright                      "open split pane to right
 
