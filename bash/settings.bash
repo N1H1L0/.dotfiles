@@ -29,11 +29,11 @@ else
   :
 fi
 
-if [-d "/usr/local/Homebrew"];then 
+if [ -d "/usr/local/Homebrew" ]; then 
   export PATH="/usr/local/sbin:$PATH"
 fi 
 
-if [-d "/usr/local/Hombrew" -a "brew ls --versions bzip2 >/dev/null"]; then
+if [ -d "/usr/local/Hombrew" -a "brew ls --versions bzip2 >/dev/null" ]; then
   export PATH="/usr/local/opt/bzip2/bin:$PATH"
 fi
 
