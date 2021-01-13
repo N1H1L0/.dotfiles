@@ -12,6 +12,5 @@ CHR 34;43                     # character special
 SETUID 30;41                  # executable with setuid (u+s) bit set 
 SETGID 30;36                  # executable with setgid (g+s) bit set 
 STICKY_OTHER_WRITABLE 30;42   # directory writable to others (+t,o+w), with sticky bit 
-OTHER_WRITABLE 30;43            # directory writable to others (o+w), without sticky bit 
-
+OTHER_WRITABLE 30;43          # directory writable to others (o+w), without sticky bit 
 
