@@ -16,26 +16,4 @@ export HISTCONTROL=ignoreboth
 export HISTSIZE=5000
 export HISTIGNORE="clear:bg:fg:cd:cd -:cd ..:exit:date:w:* --help:ls:l:ll:lll"
 
-if [ -f "$HOME/.asdf/asdf.sh" ]; then 
-  # asdf installed with git 
-  . $HOME/.asdf/asdf.sh
-  . $HOME/.asdf/completions/asdf.bash
-elif [ -d "/usr/local/Homebrew" -a "brew ls --versions asdf >/dev/null" ]; then 
-  # asdf installed with brew
-  . /usr/local/opt/asdf/asdf.sh 
-  . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
-else 
-  # do nothing so bash doesn't give errors with asdf isn't installed
-  :
-fi
-
-if [ -d "/usr/local/Homebrew" ]; then 
-  export PATH="/usr/local/sbin:$PATH"
-fi 
-
-if [ -d "/usr/local/Hombrew" -a "brew ls --versions bzip2 >/dev/null" ]; then
-  export PATH="/usr/local/opt/bzip2/bin:$PATH"
-fi
-
-
 
