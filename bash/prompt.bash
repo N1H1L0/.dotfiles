@@ -14,7 +14,7 @@ case $OS in
     ;;
   'Darwin')
     # echo 'macOS'
-    if [-d "/usr/local/Homebrew" -a "brew ls --versions coreutils > /dev/null" ]; then
+    if [ -d "/usr/local/Homebrew" -a "brew ls --versions coreutils > /dev/null" ]; then
       # Use coreutils 
       PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
       MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
