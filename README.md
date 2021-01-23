@@ -49,6 +49,7 @@ You can make local customizations for some programs by:
   * `zsh` / `bash` : `shell_local_after` run last
   * `git` : `gitconfig_local`
   * `tmux` : `tmux_local.conf`
+  * `GNU Readline` : `inputrc_local`
 
 ## License
 

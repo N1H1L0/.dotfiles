@@ -3,3 +3,10 @@ Homebrew
 coreutils
 arduino
 gps
+dotfiles
+Readline
+gitconfig
+bashrc
+zprofile
+submodules
+dotbot

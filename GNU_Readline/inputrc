@@ -1,0 +1,18 @@
+$include /etc/inputrc
+$include ~/.dot_local/inputrc_local
+
+# set vi stuff 
+set editing-mode vi
+set keymap vi
+
+# set annoying error bell to visible
+set bell-style visible 
+
+# sets completion stuff 
+set colored-stats On 
+set completion-ignore-case On
+set completion-prefix-display-length 3
+set mark-symlinked-directories On
+set show-all-if-ambiguous On
+set show-all-if-unmodified On
+set visible-stats On

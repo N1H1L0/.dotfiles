@@ -2,6 +2,10 @@
 install:
 	./install
 
+# Delete HomeBrew and .dotfiles
+delete:
+	./os/delete.sh
+
 # Set macos settings
 mac:
 	./os/mac.sh
@@ -51,4 +55,4 @@ brew-bash:
 brew-zsh:
 	chsh -s /usr/local/bin/zsh 
 
-.PHONY: install mac brew-snap brew-basic brew-all brew-restore-basic bash zsh brew-bash brew-zsh 
+.PHONY: install delete mac brew-snap brew-basic brew-all brew-restore-basic bash zsh brew-bash brew-zsh 

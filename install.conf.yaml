@@ -36,6 +36,10 @@
       path: git/gitconfig
       force: true
 
+    ~/.inputrc:
+      path: GNU_Readline/inputrc
+      force: true
+
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [git submodule update --init --remote, Updating submodules]
