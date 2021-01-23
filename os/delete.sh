@@ -46,7 +46,6 @@ if [ -d "/usr/local/Homebrew" ]; then
   brew remove --force $(brew list --formula)
   else
     cecho "Acknowledged a NO-GO. Continuing to the next part of the script." $red
-    exit
   fi
 
   echo ""
