@@ -42,8 +42,8 @@ if [ -d "/usr/local/Homebrew" ]; then
   cecho "Do you want to delete all HomeBrew formula? (y/n)" $red
   read -r response
   if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
-  cecho "  > Deleting all HomeBrew installed formula" $yellow
-  brew remove --force $(brew list --formula)
+    cecho "  > Deleting all HomeBrew installed formula" $yellow
+    brew remove --force $(brew list --formula)
   else
     cecho "Acknowledged a NO-GO. Continuing to the next part of the script." $red
   fi
@@ -52,8 +52,8 @@ if [ -d "/usr/local/Homebrew" ]; then
   cecho "Do you want to delete all HomeBrew Casks? (y/n)" $red
   read -r response
   if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
-  cecho "  > Deleting all HomeBrew installed Casks" $yellow
-  brew remove --force $(brew list --casks)
+    cecho "  > Deleting all HomeBrew installed Casks" $yellow
+    brew remove --force $(brew list --casks)
   else
     cecho "Acknowledged a NO-GO. Continuing to the next part of the script." $red
   fi
@@ -62,8 +62,8 @@ if [ -d "/usr/local/Homebrew" ]; then
   cecho "Do you want to delete HomeBrew? (y/n)" $red
   read -r response
   if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
-  cecho "  > Deleting HomeBrew" $yellow
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
+    cecho "  > Deleting HomeBrew" $yellow
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
   else
     cecho "Acknowledged a NO-GO. Continuing to the next part of the script." $red
   fi
@@ -75,26 +75,24 @@ cecho "Do you want to remove all symlinks created by .dotfiles? (y/n)" $red
 read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   cecho "  > Deleting symlinks for Bash" $yellow
-    ~/.bashrc
-    ~/.bash_profile
+  rm ~/.bashrc
+  rm ~/.bash_profile
 
   cecho "  > Deleting symlinks for Zsh" $yellow
-    ~/.zshrc
-    ~/.zprofile
+  rm ~/.zshrc
+  rm ~/.zprofile
  
   cecho "  > Deleting symlinks for Vim" $yellow
-    ~/.vimrc
+  rm ~/.vimrc
 
   cecho "  > Deleting symlinks for tmux" $yellow
-    ~/.tmux.conf
+  rm ~/.tmux.conf
 
   cecho "  > Deleting symlinks for git" $yellow
-    ~/.gitconfig
+  rm ~/.gitconfig
 
   cecho "  > Deleting symlink for GNU Readline" $yellow
-    ~/.inputrc
-
-
+  rm ~/.inputrc
 else
   cecho "Acknowledged a NO-GO. Continuing to the next part of the script." $red
 fi
@@ -103,8 +101,8 @@ echo ""
 cecho "Do you want to delete .dotfiles? (y/n)" $red
 read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
-
-rm -rf ~/.dotfiles
+  cecho "  > Deleting .dotfiles" $yellow 
+  rm -rf ~/.dotfiles
 
 else
   cecho "Acknowledged a NO-GO. Continuing to the next part of the script." $red
