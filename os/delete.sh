@@ -103,7 +103,7 @@ read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   cecho "  > Deleting .dotfiles" $yellow 
   rm -rf ~/.dotfiles
-
+  cd
 else
   cecho "Acknowledged a NO-GO. Continuing to the next part of the script." $red
 fi
