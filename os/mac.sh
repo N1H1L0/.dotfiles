@@ -88,12 +88,12 @@ defaults write com.apple.menuextra.battery ShowPercent -bool true
 cecho "  > Check for software updates daily, not just once per week" $yellow
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
-cecho "  > Disabel double-space period" $yellow
+cecho "  > Disable double-space period" $yellow
 defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -int 0
 
 cecho "  > Set up trackpad & mouse speed to what I like" $yellow
-defaults write -g com.apple.trackpad.scaling 4
-defaults write -g com.apple.mouse.scaling 4
+defaults write -g com.apple.trackpad.scaling -1
+defaults write -g com.apple.mouse.scaling -1
 
 echo ""
 cecho "###############################################################################" $green

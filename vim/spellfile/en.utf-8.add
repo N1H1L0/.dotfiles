@@ -10,3 +10,7 @@ bashrc
 zprofile
 submodules
 dotbot
+cecho
+tmux
+zshrc
+inputrc

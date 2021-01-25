@@ -10,6 +10,10 @@ delete:
 mac:
 	./os/mac.sh
 
+# Install basic stuff for linux
+linux: 
+	sudo ./os/linux.sh
+
 # Save snapshot of all Homebrew packages to brew/Brewfile
 brew-snap:
 	brew bundle dump -f --file=brew/Brewfile
@@ -55,4 +59,4 @@ brew-bash:
 brew-zsh:
 	chsh -s /usr/local/bin/zsh 
 
-.PHONY: install delete mac brew-snap brew-basic brew-all brew-restore-basic bash zsh brew-bash brew-zsh 
+.PHONY: install delete mac linux brew-snap brew-basic brew-all brew-restore-basic bash zsh brew-bash brew-zsh 
