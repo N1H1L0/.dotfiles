@@ -22,7 +22,7 @@ case $SHELL in
    # assume something else	
    ;;	
 esac
-
+: << 'END'
 # Source Homebrew stuff if it is installed
 if [ -d "/usr/local/Homebrew" ]; then 
   export PATH="/usr/local/sbin:$PATH"
@@ -33,8 +33,8 @@ if [ -d "/usr/local/Homebrew" ]; then
     export LDFLAGS="-L/usr/local/opt/libarchive/lib"
     export CPPFLAGS="-I/usr/local/opt/libarchive/include"
     export PKG_CONFIG_PATH="/usr/local/opt/libarchive/lib/pkgconfig"
-    export PATH="/usr/local/opt/libarchive/bin:$PATH"
+    export PATH="/
   fi
 fi
-
+END
 
