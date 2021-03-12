@@ -14,7 +14,7 @@ case $SHELL in
      . /usr/local/opt/asdf/asdf.sh 
      . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
    else 
-     # do nothing so bash doesn't give errors with asdf isn't installed
+     # do nothing so bash doesn't give errors if asdf isn't installed
      :
    fi
    ;;	
@@ -22,6 +22,7 @@ case $SHELL in
    # assume something else	
    ;;	
 esac
+
 : << 'END'
 # Source Homebrew stuff if it is installed
 if [ -d "/usr/local/Homebrew" ]; then 
