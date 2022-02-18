@@ -62,6 +62,6 @@ You can make local customizations for some programs by:
 
 ## License
 
-All of my code in this project is MIT Licensed - see the LICENSE.md file for details. Any submodules follow their own licensing.
+All of my code in this project is MIT Licensed - see the LICENSE file for details. Any submodules follow their own licensing.
 
 [dotbot]: https://github.com/anishathalye/dotbot
