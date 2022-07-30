@@ -42,7 +42,7 @@ call plug#end()
 " Colorscheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on                       "enable syntax processing 
-colorscheme peachpuff           "set colorscheme
+colorscheme default             "set colorscheme
 highlight Comment ctermfg=green "Highlight comment green
 
 " Spaces & Tabs
