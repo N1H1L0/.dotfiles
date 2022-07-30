@@ -43,6 +43,7 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on                       "enable syntax processing 
 colorscheme default             "set colorscheme
+set background=dark             "make background dark
 highlight Comment ctermfg=green "Highlight comment green
 
 " Spaces & Tabs
