@@ -21,6 +21,7 @@ brew install asdf
 brew install coreutils 
 brew install curl 
 brew install wget 
+brew install git-lfs
 
 # Remove outdated versions from the cellar.
 brew cleanup
