@@ -52,3 +52,9 @@ up()
   fi
   cd "${cdir}"
 }
+
+# Remove and print location of all .DS_Store files in a directory
+rmds()
+{
+  find . -name ".DS_Store" -print -delete
+}
