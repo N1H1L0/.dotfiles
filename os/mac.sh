@@ -61,6 +61,9 @@ cecho "  > Set a really fast key repeat" $yellow
 defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
+cecho "  > Allow key repeat in VS code for vim scrolling" $yellow
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+
 cecho "  > Enable text replacement almost everywhere" $yellow
 defaults write -g WebAutomaticTextReplacementEnabled -bool true
 
