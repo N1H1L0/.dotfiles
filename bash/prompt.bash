@@ -14,10 +14,10 @@ case $OS in
     ;;
   'Darwin')
     # echo 'macOS'
-    if [ -d "/usr/local/Homebrew" -a "brew ls --versions coreutils > /dev/null" ]; then
+    if [ -d "/opt/Homebrew" -a "brew ls --versions coreutils > /dev/null" ]; then
       # Use coreutils 
-      PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-      MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+      PATH="/opt/Homebrew/opt/coreutils/libexec/gnubin:$PATH"
+      MANPATH="opt/Homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
       alias ls="ls --color=auto"
       eval "$(dircolors ~/.dotfiles/bash/dircolors.bash)"
       export term=xterm-256color        # for common 256 color terminals (e.g. gnome-terminal)

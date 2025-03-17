@@ -14,17 +14,19 @@ brew "git-lfs"
 
 # Dev cask installed stuff 
 cask "rectangle"
-cask "virtualbox"
-cask "wireshark"
-cask "scansion"
-cask "chromium"
+#cask "virtualbox"
+#cask "wireshark"
+#cask "scansion"
+#cask "chromium"
 cask "visual-studio-code"
+cask "arduino-ide"
 
 # Non dev stuff 
-cask "anki"
-cask "inkscape"
-cask "malwarebytes"
-cask "notion"
+#cask "anki"
+#cask "inkscape"
+#cask "malwarebytes"
+#cask "notion"
 cask "zoom"
 cask "spotify"
-
+cask "microsoft-office"
+cask "adguard"
